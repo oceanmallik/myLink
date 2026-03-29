@@ -72,6 +72,41 @@ body::after {
     z-index: 1;
 }
 
+.desktop-qr {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    z-index: 2;
+}
+
+.desktop-qr-image {
+    width: 130px;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid rgba(223, 249, 255, 0.35);
+    background: rgba(8, 12, 28, 0.75);
+    box-shadow:
+        0 0 16px rgba(0, 246, 255, 0.25),
+        0 0 28px rgba(255, 43, 214, 0.2);
+}
+
+.desktop-qr-text {
+    margin: 0;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    color: var(--text-soft);
+    text-align: center;
+}
+
+    @media (max-width: 768px) {
+        .desktop-qr {
+            display: none;
+        }
+    }
 .profile-card {
     text-align: center;
     padding: 34px 24px 28px;
@@ -238,6 +273,10 @@ h1 {
 @media (max-width: 480px) {
     body {
         padding: 16px;
+    }
+
+    .desktop-qr {
+        display: none;
     }
 
     .profile-card {

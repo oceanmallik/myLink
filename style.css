@@ -1,74 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Orbitron:wght@500;700&display=swap");
+
 :root {
-    --bg-color: #0d1117;
-    --text-color: #c9d1d9;
-    --btn-bg: #161b22;
-    --btn-hover: #1f6feb;
-    --btn-border: #30363d;
+    --bg-top: #06020f;
+    --bg-mid: #0e0722;
+    --bg-bottom: #03070f;
+    --text-main: #dff9ff;
+    --text-soft: #9dd8e4;
+    --neon-cyan: #00f6ff;
+    --neon-pink: #ff2bd6;
+    --neon-blue: #4a7dff;
+    --panel-bg: rgba(8, 12, 28, 0.72);
+    --panel-border: rgba(0, 246, 255, 0.4);
+    --button-bg: rgba(15, 22, 48, 0.78);
+    --button-border: rgba(255, 43, 214, 0.4);
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    font-family: "Chakra Petch", sans-serif;
+    color: var(--text-main);
+    background:
+        radial-gradient(1200px 800px at 20% -10%, rgba(255, 43, 214, 0.3), transparent 55%),
+        radial-gradient(900px 700px at 100% 120%, rgba(0, 246, 255, 0.25), transparent 60%),
+        linear-gradient(165deg, var(--bg-top), var(--bg-mid) 45%, var(--bg-bottom));
+    overflow-x: hidden;
+    position: relative;
+}
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+}
+
+body::before {
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.04),
+        rgba(255, 255, 255, 0.04) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+    mix-blend-mode: soft-light;
+    opacity: 0.3;
+}
+
+body::after {
+    background: radial-gradient(circle at 50% 50%, transparent 45%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+.grid-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(0, 246, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 246, 255, 0.08) 1px, transparent 1px);
+    background-size: 36px 36px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 80%);
 }
 
 .container {
-    width: 100%;
-    max-width: 600px;
-    padding: 40px 20px;
+    width: min(100%, 640px);
+    z-index: 1;
+}
+
+.profile-card {
     text-align: center;
-    box-sizing: border-box;
+    padding: 34px 24px 28px;
+    border: 1px solid var(--panel-border);
+    border-radius: 18px;
+    background: var(--panel-bg);
+    backdrop-filter: blur(8px);
+    box-shadow:
+        0 0 24px rgba(0, 246, 255, 0.25),
+        0 0 60px rgba(255, 43, 214, 0.16),
+        inset 0 0 24px rgba(74, 125, 255, 0.16);
+    animation: card-entry 0.75s ease-out both;
 }
 
 .profile-pic {
-    width: 120px;
-    height: 120px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
-    margin-bottom: 20px;
-    border: 3px solid var(--btn-border);
+    margin-bottom: 16px;
+    border: 2px solid var(--neon-cyan);
+    box-shadow:
+        0 0 18px rgba(0, 246, 255, 0.75),
+        0 0 42px rgba(255, 43, 214, 0.35);
     object-fit: cover;
 }
 
-h1 {
-    font-size: 1.5rem;
-    margin-bottom: 5px;
+.kicker {
+    margin: 2px 0 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-weight: 600;
+    font-size: 0.72rem;
+    color: var(--neon-cyan);
 }
 
-p.bio {
+h1 {
+    margin: 0;
+    font-family: "Orbitron", sans-serif;
+    font-size: clamp(1.55rem, 4vw, 2.05rem);
+    letter-spacing: 0.03em;
+    text-shadow:
+        0 0 10px rgba(0, 246, 255, 0.65),
+        0 0 18px rgba(255, 43, 214, 0.45);
+}
+
+.bio {
+    margin: 10px 0 28px;
+    color: var(--text-soft);
     font-size: 1rem;
-    color: #8b949e;
-    margin-bottom: 30px;
 }
 
 .link-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    display: grid;
+    gap: 12px;
 }
 
 .link-btn {
+    position: relative;
+    isolation: isolate;
     display: block;
     width: 100%;
-    padding: 15px;
-    background-color: var(--btn-bg);
-    color: var(--text-color);
+    padding: 14px 16px;
+    border-radius: 10px;
+    border: 1px solid var(--button-border);
+    background: var(--button-bg);
+    color: var(--text-main);
     text-decoration: none;
-    border: 1px solid var(--btn-border);
-    border-radius: 8px;
-    font-weight: 600;
-    transition: all 0.2s ease-in-out;
-    box-sizing: border-box;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-.link-btn:hover {
-    background-color: var(--btn-hover);
-    border-color: var(--btn-hover);
+.link-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(120deg, rgba(255, 43, 214, 0.22), rgba(0, 246, 255, 0.22));
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.link-btn:hover,
+.link-btn:focus-visible {
     transform: translateY(-2px);
-    color: #ffffff;
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 18px rgba(0, 246, 255, 0.45);
+}
+
+.link-btn:hover::before,
+.link-btn:focus-visible::before {
+    opacity: 1;
+}
+
+@keyframes card-entry {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.99);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 16px;
+    }
+
+    .profile-card {
+        padding: 28px 18px 22px;
+        border-radius: 14px;
+    }
+
+    .profile-pic {
+        width: 112px;
+        height: 112px;
+    }
+
+    .link-btn {
+        font-size: 0.92rem;
+    }
 }

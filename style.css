@@ -1,0 +1,74 @@
+:root {
+    --bg-color: #0d1117;
+    --text-color: #c9d1d9;
+    --btn-bg: #161b22;
+    --btn-hover: #1f6feb;
+    --btn-border: #30363d;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 3px solid var(--btn-border);
+    object-fit: cover;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+p.bio {
+    font-size: 1rem;
+    color: #8b949e;
+    margin-bottom: 30px;
+}
+
+.link-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.link-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--btn-bg);
+    color: var(--text-color);
+    text-decoration: none;
+    border: 1px solid var(--btn-border);
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
+}
+
+.link-btn:hover {
+    background-color: var(--btn-hover);
+    border-color: var(--btn-hover);
+    transform: translateY(-2px);
+    color: #ffffff;
+}

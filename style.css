@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Orbitron:wght@500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Orbitron:wght@500;700&family=Ubuntu:wght@500;700&display=swap");
 
 :root {
     --bg-top: #06020f;
@@ -9,6 +9,8 @@
     --neon-cyan: #00f6ff;
     --neon-pink: #ff2bd6;
     --neon-blue: #4a7dff;
+    --neon-red: #ff3b3b;
+    --neon-yellow: #f8ff3d;
     --panel-bg: rgba(8, 12, 28, 0.72);
     --panel-border: rgba(0, 246, 255, 0.4);
     --button-bg: rgba(15, 22, 48, 0.78);
@@ -94,11 +96,13 @@ body::after {
     height: 130px;
     border-radius: 50%;
     margin-bottom: 16px;
-    border: 2px solid var(--neon-cyan);
+    border: 2px solid rgba(255, 59, 59, 0.75);
     box-shadow:
-        0 0 18px rgba(0, 246, 255, 0.75),
-        0 0 42px rgba(255, 43, 214, 0.35);
+        0 0 10px rgba(255, 59, 59, 0.45),
+        0 0 26px rgba(255, 59, 59, 0.32),
+        0 0 50px rgba(255, 59, 59, 0.2);
     object-fit: cover;
+    animation: profile-red-pulse 2.8s ease-in-out infinite;
 }
 
 .kicker {
@@ -112,12 +116,24 @@ body::after {
 
 h1 {
     margin: 0;
-    font-family: "Orbitron", sans-serif;
+    font-family: "Ubuntu", sans-serif;
     font-size: clamp(1.55rem, 4vw, 2.05rem);
     letter-spacing: 0.03em;
+}
+
+.name-ocean {
+    color: #ffffff;
     text-shadow:
-        0 0 10px rgba(0, 246, 255, 0.65),
-        0 0 18px rgba(255, 43, 214, 0.45);
+        0 0 6px rgba(255, 255, 255, 0.45),
+        0 0 14px rgba(255, 255, 255, 0.2);
+}
+
+.name-mallik {
+    color: var(--neon-yellow);
+    text-shadow:
+        0 0 10px rgba(248, 255, 61, 0.85),
+        0 0 22px rgba(248, 255, 61, 0.55),
+        0 0 34px rgba(248, 255, 61, 0.32);
 }
 
 .bio {
@@ -162,8 +178,10 @@ h1 {
 .link-btn:hover,
 .link-btn:focus-visible {
     transform: translateY(-2px);
-    border-color: var(--neon-cyan);
-    box-shadow: 0 0 18px rgba(0, 246, 255, 0.45);
+    border-color: var(--neon-yellow);
+    box-shadow:
+        0 0 10px rgba(248, 255, 61, 0.55),
+        0 0 22px rgba(248, 255, 61, 0.4);
 }
 
 .link-btn:hover::before,
@@ -179,6 +197,22 @@ h1 {
     to {
         opacity: 1;
         transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes profile-red-pulse {
+    0%,
+    100% {
+        box-shadow:
+            0 0 8px rgba(255, 59, 59, 0.3),
+            0 0 22px rgba(255, 59, 59, 0.2),
+            0 0 42px rgba(255, 59, 59, 0.1);
+    }
+    50% {
+        box-shadow:
+            0 0 16px rgba(255, 59, 59, 0.75),
+            0 0 38px rgba(255, 59, 59, 0.5),
+            0 0 72px rgba(255, 59, 59, 0.34);
     }
 }
 

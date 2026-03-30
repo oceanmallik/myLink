@@ -1,2 +1,2 @@
-# myLink
-A custom link share page
+# Social Media Link Tree Website
+A self-hosted custom link sharing page

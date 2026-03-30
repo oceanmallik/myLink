@@ -14,7 +14,7 @@
             <img src="me.jpg" alt="Ocean Mallik" class="profile-pic">
 
             <h1><span class="name-ocean">Ocean</span> <span class="name-mallik">Mallik</span></h1>
-            <p class="bio">Software Engineering Student from DIU</p>
+            <p class="bio"><span id="typing-bio" class="typing-bio" data-text="Software Engineering Student from DIU"></span></p>
 
             <div class="link-container">
                 <a href="https://oceanmallik.com" class="link-btn" target="_blank" rel="noopener noreferrer"><img src="icons/website.svg" class="link-icon website-icon" alt="" aria-hidden="true"> My Website</a>
@@ -29,6 +29,51 @@
         <img src="QR.svg" alt="QR code to open this page on mobile" class="desktop-qr-image">
         <p class="desktop-qr-text">Open it on mobile</p>
     </aside>
+
+    <script>
+        (function () {
+            const typingElement = document.getElementById("typing-bio");
+            if (!typingElement) return;
+
+            const text = typingElement.dataset.text || "";
+            const typeSpeed = 75;
+            const eraseSpeed = 38;
+            const stayDelay = 5000;
+            const loopDelay = 500;
+
+            let index = 0;
+            let isDeleting = false;
+
+            function tick() {
+                if (!isDeleting) {
+                    index += 1;
+                    typingElement.textContent = text.slice(0, index);
+
+                    if (index === text.length) {
+                        isDeleting = true;
+                        setTimeout(tick, stayDelay);
+                        return;
+                    }
+
+                    setTimeout(tick, typeSpeed);
+                    return;
+                }
+
+                index -= 1;
+                typingElement.textContent = text.slice(0, index);
+
+                if (index === 0) {
+                    isDeleting = false;
+                    setTimeout(tick, loopDelay);
+                    return;
+                }
+
+                setTimeout(tick, eraseSpeed);
+            }
+
+            tick();
+        })();
+    </script>
 
 </body>
 </html>

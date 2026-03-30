@@ -36,6 +36,13 @@
             if (!typingElement) return;
 
             const text = typingElement.dataset.text || "";
+            const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+            if (isMobile) {
+                typingElement.textContent = text;
+                return;
+            }
+
             const typeSpeed = 75;
             const eraseSpeed = 38;
             const stayDelay = 5000;

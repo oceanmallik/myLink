@@ -18,7 +18,7 @@
     --neon-red: #ff3b3b;
     --neon-yellow: #ffff6b;
     --panel-bg: rgba(8, 12, 28, 0.72);
-    --panel-border: rgba(255, 255, 107, 0.58);
+    --panel-border: rgba(255, 138, 0, 0.58);
     --button-bg: rgba(15, 22, 48, 0.78);
     --button-border: rgba(255, 43, 214, 0.4);
 }
@@ -153,9 +153,9 @@ body::after {
     background: var(--panel-bg);
     backdrop-filter: blur(8px);
     box-shadow:
-        0 0 28px rgba(255, 255, 107, 0.42),
+        0 0 28px rgba(255, 138, 0, 0.42),
         0 0 60px rgba(255, 43, 214, 0.16),
-        inset 0 0 24px rgba(255, 255, 107, 0.24);
+        inset 0 0 24px rgba(255, 138, 0, 0.24);
     animation: card-entry 0.75s ease-out both;
 }
 
@@ -217,6 +217,14 @@ h1 {
     border-right: 2px solid rgba(255, 255, 107, 0.9);
     padding-right: 4px;
     animation: caret-blink 0.85s step-end infinite;
+}
+
+@media (max-width: 768px) {
+    .typing-bio {
+        border-right: 0;
+        padding-right: 0;
+        animation: none;
+    }
 }
 
 .link-container {

@@ -351,10 +351,6 @@ body {
     backdrop-filter: blur(10px);
 }
 
-.is-mobile-device .desktop-qr {
-    display: none !important;
-}
-
 .desktop-qr-wrapper {
     width: 140px;
     height: 140px;
@@ -380,7 +376,7 @@ body {
     text-align: center;
 }
 
-@media (max-width: 768px), (hover: none) and (pointer: coarse) {
+@media (max-width: 768px) {
     .desktop-qr {
         display: none;
     }

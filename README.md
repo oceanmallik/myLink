@@ -11,7 +11,7 @@ This project is a lightweight, static site for sharing your important links from
 - Typing bio animation on desktop screens
 - Responsive design for mobile devices
 - SVG icons for link buttons
-- Optional QR block for desktop visitors
+- Desktop QR panel with fixed card layout (hidden on mobile)
 
 ## Project Structure
 
@@ -61,9 +61,17 @@ Edit CSS variables in style.css under :root to change colors, glow intensity, an
 
 Replace or add SVG files in icons/ and update each link button image source in index.html.
 
-### 5) QR Image
+### 5) Favicon
 
-The desktop QR panel uses QR.svg. Replace that file if you want a different target or style.
+The favicon is the small icon that appears in the browser tab. Replace the favicon file referenced in index.html to customize it for your site. Supported formats include .ico, .png, and .svg.
+
+### 6) QR Panel
+
+The desktop QR panel is implemented as a fixed card in CSS with proper padding, border radius, and a readable label. The QR image (QR.svg) displays in a real square container. To customize:
+
+- Replace QR.svg with a new QR code
+- Modify the panel visibility in CSS using viewport-width media queries (not hover or touch detection)
+- Keep the card layout in CSS rather than using inline positioning overrides
 
 ## Deployment
 

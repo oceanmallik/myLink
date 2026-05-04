@@ -70,6 +70,18 @@ body {
     border: 2px solid var(--border-color);
     box-shadow: var(--shadow-md);
     transition: var(--transition);
+    animation: redGlowFade 2s ease-in-out infinite;
+}
+
+.profile-image-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    background: radial-gradient(circle, rgba(255, 0, 0, 0.5), transparent 70%);
+    z-index: 0;
+    pointer-events: none;
+    animation: glowFade 2s ease-in-out infinite;
 }
 
 .profile-image-container:hover {
@@ -83,16 +95,25 @@ body {
     height: 100%;
     object-fit: cover;
     display: block;
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.6), 0 0 40px rgba(255, 0, 0, 0.4), 0 0 60px rgba(255, 0, 0, 0.2);
-    animation: redGlowPulse 2s ease-in-out infinite;
+    position: relative;
+    z-index: 2;
 }
 
-@keyframes redGlowPulse {
+@keyframes redGlowFade {
     0%, 100% {
-        box-shadow: 0 0 20px rgba(255, 0, 0, 0.6), 0 0 40px rgba(255, 0, 0, 0.4), 0 0 60px rgba(255, 0, 0, 0.2);
+        box-shadow: var(--shadow-md), 0 0 15px rgba(255, 0, 0, 0.2), 0 0 30px rgba(255, 0, 0, 0.1);
     }
     50% {
-        box-shadow: 0 0 30px rgba(255, 0, 0, 1), 0 0 60px rgba(255, 0, 0, 0.8), 0 0 90px rgba(255, 0, 0, 0.5);
+        box-shadow: var(--shadow-md), 0 0 35px rgba(255, 0, 0, 0.8), 0 0 65px rgba(255, 0, 0, 0.45), 0 0 95px rgba(255, 0, 0, 0.25);
+    }
+}
+
+@keyframes glowFade {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
     }
 }
 

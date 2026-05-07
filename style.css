@@ -389,6 +389,20 @@ body {
     .link-url {
         font-size: 12px;
     }
+
+    /* Make social media section scrollable on mobile */
+    .social-media-section {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 8px;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .social-icon {
+        flex-shrink: 0;
+    }
 }
 
 /* Focus styles for accessibility */

@@ -392,16 +392,26 @@ body {
 
     /* Make social media section scrollable on mobile */
     .social-media-section {
+        display: flex;
+        justify-content: flex-start;
+        gap: 12px;
         flex-wrap: nowrap;
         overflow-x: auto;
         overflow-y: hidden;
-        padding-bottom: 8px;
-        scroll-behavior: smooth;
+        padding: 6px 6px 8px 6px;
         -webkit-overflow-scrolling: touch;
+        touch-action: pan-x;
+        overscroll-behavior-x: contain;
+        scroll-behavior: smooth;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        scroll-snap-type: x proximity;
     }
 
     .social-icon {
-        flex-shrink: 0;
+        flex: 0 0 auto;
+        scroll-snap-align: start;
     }
 }
 

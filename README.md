@@ -17,19 +17,22 @@ This project is a lightweight, static site for sharing your important links from
 
 ```text
 myLink/
-├── index.html        # Main page markup and typing animation script
+├── index.html        # Main page markup and mount points
+├── app.js            # JSON loading and DOM rendering
+├── social.json       # Social icon data
+├── website.json      # Link card data
 ├── style.css         # Styling, animations, and responsive behavior
 ├── CNAME             # Custom domain config (for GitHub Pages)
 ├── README.md         # Project documentation
-└── icons/            # SVG icon assets used in link buttons
+├── icons/            # SVG icon assets used in link buttons
+└── socialIcons/      # SVG icon assets used in social links
 ```
 
 ## Run Locally
 
 Because this is a static site, you can run it in several simple ways:
 
-1. Open index.html directly in your browser.
-2. Or serve the folder with a local HTTP server:
+- Serve the folder with a local HTTP server so the JSON files load correctly:
 
 ```bash
 cd myLink
@@ -57,9 +60,9 @@ The typing text comes from the data-text attribute on the element with id typing
 
 Edit CSS variables in style.css under :root to change colors, glow intensity, and panel styling.
 
-### 4) Icons
+### 4) Data and Icons
 
-Replace or add SVG files in icons/ and update each link button image source in index.html.
+Edit social.json and website.json to change the rendered social links and cards. Replace or add SVG files in icons/ and socialIcons/ if you want to change the artwork.
 
 ### 5) Favicon
 
@@ -88,7 +91,7 @@ If you use GitHub Pages with a custom domain, keep the CNAME file updated with y
 
 - HTML5
 - CSS3
-- Vanilla JavaScript (inline script for typing effect)
+- Vanilla JavaScript
 
 ## License
 

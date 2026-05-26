@@ -1,0 +1,26 @@
+[
+	{
+		"label": "My Website",
+		"href": "https://oceanmallik.com",
+		"url": "oceanmallik.com",
+		"icon": "icons/website.svg"
+	},
+	{
+		"label": "My Blog Writing Website",
+		"href": "https://blog.oceanmallik.com",
+		"url": "blog.oceanmallik.com",
+		"icon": "icons/website.svg"
+	},
+	{
+		"label": "GitHub",
+		"href": "https://github.com/oceanmallik",
+		"url": "@oceanmallik",
+		"icon": "icons/github.svg"
+	},
+	{
+		"label": "LinkedIn",
+		"href": "https://www.linkedin.com/in/oceanmallik/",
+		"url": "@oceanmallik",
+		"icon": "icons/linkedin.svg"
+	}
+]

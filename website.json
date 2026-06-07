@@ -2,13 +2,7 @@
 	{
 		"label": "My Website",
 		"href": "https://oceanmallik.com",
-		"url": "oceanmallik.com",
-		"icon": "icons/website.svg"
-	},
-	{
-		"label": "My Blog Writing Website",
-		"href": "https://blog.oceanmallik.com",
-		"url": "blog.oceanmallik.com",
+		"url": "www.oceanmallik.com",
 		"icon": "icons/website.svg"
 	},
 	{
@@ -22,5 +16,11 @@
 		"href": "https://www.linkedin.com/in/oceanmallik/",
 		"url": "@oceanmallik",
 		"icon": "icons/linkedin.svg"
+	},
+	{
+		"label": "Play Store Developer Page",
+		"href": "https://play.google.com/store/apps/dev?id=5168944414714193607",
+		"url": "@oceanmallik",
+		"icon": "icons/googleplay.svg"
 	}
 ]

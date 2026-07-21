@@ -112,6 +112,16 @@ function createLinkCard(item) {
   anchor.target = '_blank';
   anchor.rel = 'noopener noreferrer';
 
+  // Tag donate link for special styling when label is "Donate"
+  try {
+    if (item.label && item.label.toString().trim().toLowerCase() === 'donate') {
+      anchor.classList.add('donate');
+      anchor.setAttribute('aria-label', 'Donate');
+    }
+  } catch (e) {
+    // ignore and continue
+  }
+
   const iconWrapper = document.createElement('div');
   iconWrapper.className = 'link-icon-wrapper';
 
@@ -198,4 +208,15 @@ function renderWebsiteLinks(items) {
   qrImage.addEventListener('error', () => {
     qrImage.alt = 'QR failed to load';
   });
+  
+    // Track donate button clicks (non-blocking)
+    const donateBtn = document.querySelector('.donate-button');
+    if (donateBtn) {
+      donateBtn.addEventListener('click', (e) => {
+        try {
+          console.info('Donate button clicked');
+          // place to add analytics/event code if desired
+        } catch (_) {}
+      });
+    }
 })();

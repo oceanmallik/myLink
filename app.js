@@ -8,85 +8,6 @@ async function loadJson(path) {
   return response.json();
 }
 
-const fallbackData = {
-  'social.json': [
-    {
-      name: 'Facebook',
-      href: 'https://facebook.com/oceanmallik7',
-      icon: 'socialIcons/facebook.svg'
-    },
-    {
-      name: 'Instagram',
-      href: 'https://instagram.com/oceanmallik/',
-      icon: 'socialIcons/instagram.svg'
-    },
-    {
-      name: 'X',
-      href: 'https://x.com/oceanmallik',
-      icon: 'socialIcons/x.svg'
-    },
-    {
-      name: 'YouTube',
-      href: 'https://youtube.com/@oceanmallik',
-      icon: 'socialIcons/youtube.svg'
-    },
-    {
-      name: 'Reddit',
-      href: 'https://reddit.com/user/oceanmallik/',
-      icon: 'socialIcons/reddit.svg'
-    },
-    {
-      name: 'Steam',
-      href: 'https://steamcommunity.com/id/oceanmallik/',
-      icon: 'socialIcons/steam.svg'
-    },
-    {
-      name: 'Bluesky',
-      href: 'https://bsky.app/profile/oceanmallik.com',
-      icon: 'socialIcons/bluesky.svg'
-    },
-    {
-      name: 'Threads',
-      href: 'https://threads.com/@oceanmallik',
-      icon: 'socialIcons/threads.svg'
-    }
-  ],
-  'website.json': [
-    {
-      label: 'My Website',
-      href: 'https://oceanmallik.com',
-      url: 'oceanmallik.com',
-      icon: 'icons/website.svg'
-    },
-    {
-      label: 'My Blog Writing Website',
-      href: 'https://blog.oceanmallik.com',
-      url: 'blog.oceanmallik.com',
-      icon: 'icons/website.svg'
-    },
-    {
-      label: 'GitHub',
-      href: 'https://github.com/oceanmallik',
-      url: '@oceanmallik',
-      icon: 'icons/github.svg'
-    },
-    {
-      label: 'LinkedIn',
-      href: 'https://www.linkedin.com/in/oceanmallik/',
-      url: '@oceanmallik',
-      icon: 'icons/linkedin.svg'
-    }
-  ]
-};
-
-async function loadJsonWithFallback(path) {
-  try {
-    return await loadJson(path);
-  } catch (error) {
-    console.warn(`Using fallback data for ${path}`, error);
-    return fallbackData[path] ?? [];
-  }
-}
 
 function createSocialIcon(item) {
   const anchor = document.createElement('a');
@@ -182,8 +103,8 @@ function renderWebsiteLinks(items) {
 
 (async function () {
   const [socialResult, websiteResult] = await Promise.allSettled([
-    loadJsonWithFallback('social.json'),
-    loadJsonWithFallback('website.json')
+    loadJson('social.json'),
+    loadJson('website.json')
   ]);
 
   if (socialResult.status === 'fulfilled') {

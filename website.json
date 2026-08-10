@@ -22,5 +22,11 @@
 		"href": "https://play.google.com/store/apps/dev?id=5168944414714193607",
 		"url": "@oceanmallik",
 		"icon": "icons/googleplay.svg"
+	},
+	{
+		"label": "freeCodeCamp Profile",
+		"href": "https://www.freecodecamp.org/oceanmallik",
+		"url": "@oceanmallik",
+		"icon": "icons/freeCodeCamp.svg"
 	}
 ]

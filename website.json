@@ -6,6 +6,12 @@
 		"icon": "icons/website.svg"
 	},
 	{
+		"label": "OceanVerse - A Blog Site",
+		"href": "https://blog.oceanmallik.com",
+		"url": "www.oceanmallik.com",
+		"icon": "icons/website.svg"
+	},
+	{
 		"label": "GitHub",
 		"href": "https://github.com/oceanmallik",
 		"url": "@oceanmallik",
